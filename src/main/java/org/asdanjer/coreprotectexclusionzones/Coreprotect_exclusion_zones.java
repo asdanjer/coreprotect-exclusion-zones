@@ -6,23 +6,16 @@ import net.coreprotect.CoreProtect;
 import net.coreprotect.CoreProtectAPI;
 
 public final class Coreprotect_exclusion_zones extends JavaPlugin {
-    private CoreProtectAPI getCoreProtect() {
-        Plugin plugin = getServer().getPluginManager().getPlugin("CoreProtect");
-
-        // Check that CoreProtect is loaded
-        if (plugin == null || !(plugin instanceof CoreProtect)) {
-            return null;
-        }
-    }
     @Override
     public void onEnable() {
         // Plugin startup logic
-        CoreProtectAPI coreProtect = getCoreProtect();
+        Plugin coreProtect = getServer().getPluginManager().getPlugin("CoreProtect");
         if (coreProtect == null) {
             getLogger().info("CoreProtect not found, disabling plugin.");
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
+        CoreProtectAPI coreProtectAPI = ((CoreProtect) coreProtect).getAPI();
         getLogger().info("CoreProtect found, enabling plugin.");
 
     }
