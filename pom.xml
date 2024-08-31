@@ -58,9 +58,19 @@
           <id>sonatype</id>
           <url>https://oss.sonatype.org/content/groups/public/</url>
       </repository>
+      <repository>
+          <id>coreprotect</id>
+          <url>https://maven.playpro.com/</url>
+      </repository>
   </repositories>
 
   <dependencies>
+      <dependency>
+          <groupId>net.coreprotect</groupId>
+          <artifactId>coreprotect</artifactId>
+          <version>21.2</version>
+          <scope>provided</scope>
+      </dependency>
       <dependency>
           <groupId>org.spigotmc</groupId>
           <artifactId>spigot-api</artifactId>
