@@ -1,0 +1,4 @@
+name: coreprotect-exclusion-zones
+version: '${project.version}'
+main: org.asdanjer.coreprotectexclusionzones.Coreprotect_exclusion_zones
+api-version: '1.20'
